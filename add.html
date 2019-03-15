@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script>
+function myFunction() {
+  var x = document.getElementById("myInput").value;
+  document.getElementById("demo").innerHTML = "Name : " + x;
+	var y = document.getElementById("myInput1").value;
+  document.getElementById("demo1").innerHTML = "Phone : " + y;
+
+}
+
+</script>
+<style>
+#mytable{
+	margin:50px;
+	padding:50px;
+}
+
+#phone{
+background :black;
+color:white;
+}
+
+#add{
+	background :lightgreen;
+	width : 60px;
+	height : 30px;
+	margin : 20px;
+}
+
+#back{
+	background:white;
+	text-decoration: none;
+	color:black;
+}
+
+#form1 input[type="text"]{
+	width : 200px;
+	height : 30px;	
+	border-radius:5px;
+}
+</style>
+</head>
+<body>
+
+<center><p id="phone">ADD SUBSCRIBER</p></center>
+<a href="index.html" id="back">BACK</a>
+<br><br>
+<div id="form1">
+	<form action="index.html" type="get">
+		<label>Name:</label><br>
+		<input type="text" id="myInput" oninput="myFunction()" name=name>
+		<br>
+		<br>
+		<label>Phone:</label><br>
+		<input type="text" id="myInput1" oninput="myFunction()" name=phone>
+		<p style="color:#1a8cff;">Subscriber to be added:</p>
+		<p id="demo"></p>
+		<p id="demo1"></p>
+		<tr>
+			<td colspan=2><input type=submit value="ADD" id="add"></td>
+		</tr>
+	</form>
+</div>
+
+
+
+<br>
+
+</body>
+</html>

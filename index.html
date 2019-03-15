@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#mytable{
+	margin:50px;
+	padding:50px;
+}
+
+#phone{
+background :black;
+color:white;
+}
+
+#add{
+	background :lightgreen;
+	width : 60px;
+	height : 30px;
+	margin : 20px;
+}
+
+#rem{
+	background :red;
+	width : 80px;
+	height : 30px;
+}
+</style>
+</head>
+<body>
+
+<center><p id="phone">PHONE DIRECTORY</p></center>
+
+<button  id="add" onclick="window.location.href='add.html'">ADD</button>
+
+<table id="myTable" style="width:100%">
+  <tr>
+    <td>NAME</td>
+    <td>PHONE</td>
+	<td> </td>
+  </tr>
+  <tr>
+	
+  </tr>
+</table>
+
+<button onclick="del()" id="rem">REMOVE</button>
+<br>
+
+<script>
+function getParams()
+{
+	var idx = document.URL.indexOf('?');
+	var params = new Array();
+	if (idx != -1)
+	{
+		var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
+		for (var i=0; i<pairs.length; i++)
+		{
+			nameVal = pairs[i].split('=');
+			params[nameVal[0]] = nameVal[1];
+		}
+	}
+	return params;
+}
+		params = getParams();
+	var	name = unescape(params["name"]);
+	var	phone = unescape(params["phone"]);
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(1);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = name;
+  cell2.innerHTML = phone;
+
+function del() {
+  document.getElementById("myTable").deleteRow(1);
+}
+</script>
+
+</body>
+</html>
